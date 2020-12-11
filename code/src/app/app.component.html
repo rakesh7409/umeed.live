@@ -1,0 +1,122 @@
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League Spartan">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril Fatface">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+  <mat-toolbar style="background-color: white;" class="app-toolbar w3-bar w3-card">
+    <mat-toolbar-row>
+        <span>
+          <a mat-list-item [routerLink]="''" style="color: #dd5152; text-decoration: none;">
+          <h6 style="font-family: Quicksand;">
+          <!-- <img src="../assets/heart.png" alt="" width="50px;" height="50px;"> -->
+          BVP-Arvind Shakha</h6>
+          </a>
+        </span>
+        <span class="example-spacer"></span>
+        <button mat-raised-button routerLink="donor" style="background-color: #dd5152; color: white; font-family: Quicksand;">Donor</button>&nbsp;
+    <button mat-raised-button routerLink="patient" style="background-color: #dd5152; color: white; font-family: Quicksand;">Patient</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!-- <marquee style="background-color: red; color: white;">Live Alerts</marquee> -->
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+<div class="w3-row-padding w3-center" style="background-color: #f0f0f0;padding-bottom: 15px;;">
+  <h1 style="font-family: Pacifico; font-size: 400%;">
+    Plasma Therapy Process
+  </h1>
+  <hr style="height: 6px;
+          background-color: #dd5152; border-radius: 25px;
+          width: 30%; margin-top: -20px; margin-left: 35%;">
+  <br>
+  <div style="align-items: center;" align="center">
+  <div class="w3-third">
+    <div class="w3-card w3-container test" style="min-height:340px; width: 340px;">
+    <h4 style="font-family: Quicksand;"><b>Step 1: <span style="font-family: Abril Fatface;"> REGISTER</span></b></h4>
+    <div style=" border: #dd5152;"><img src="../assets/step1.png" style="width:40%"></div>
+    <ul style="text-align: center; font-family: Quicksand;">
+      <li>Choose option - Donor/Patient</li>
+      <li>Fill critical details</li>
+      <li>Complete Registration</li>
+    </ul>
+    </div>
+  </div>
+  
+  <div class="w3-third">
+    <div class="w3-card w3-container test" style="min-height:340px; width: 340px;">
+    <h4 style="font-family: Quicksand;"><b>Step 2: <span style="font-family: Abril Fatface;"> MATCH</span></b></h4>
+    <div style=" border: #dd5152;"><img src="../assets/step2.png" style="width:40%;"></div>
+      <ul style="text-align: center justify; font-family: Quicksand;">
+        <li>Verified details</li>
+        <li>Match recipients with donors</li>
+        <li>Generate successful matches</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="w3-third">
+    <div class="w3-card w3-container test" style="min-height:340px; width: 340px;">
+    <h4 style="font-family: Quicksand;">Step 3: <span style="font-family: Abril Fatface;"> CONNECT</span></h4>
+    <div style=" border: #dd5152;"><img src="../assets/step3.png" alt="Norway" style="width:40%"></div>
+    <ul style="text-align: center justify; font-family: Quicksand;">
+      <li>Identify nearest donors</li>
+      <li>Donors/Recipients receive list</li>
+      <li>Life saved!</li>
+    </ul>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact" style="background-color: white;">
+  <div class="w3-row" style="margin-left: 5%;">
+    <div class="w3-col m7">
+      <div class="w3-container w3-card-4 w3-padding-10 w3-white" >
+        <!-- Mandatory -->
+        <h2 style="font-family: Pacifico; font-size: 200%;">Have a question? Ask Us.</h2>
+        <form [formGroup]="firstFormGroup">
+      <div class="w3-section">      
+        <mat-form-field style="width: 100%;">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="Name">
+        </mat-form-field>
+      </div>
+      <div class="w3-section">      
+        <mat-form-field style="width: 55%;">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="Email">
+        </mat-form-field>
+        <mat-form-field style="width: 40%; margin-left: 5%;">
+          <mat-label>Mobile No</mat-label>
+          <input matInput formControlName="Phoneno">
+        </mat-form-field>
+      </div>
+      <div class="w3-section">
+        <mat-form-field style="width: 100%;;">
+          <mat-label>Message</mat-label>
+          <textarea matInput placeholder="Ex. I think I have..." formControlName="Message"></textarea>
+        </mat-form-field>
+      </div> 
+      <button mat-raised-button class="w3-right" (click)="sendMail()" style="font-family: Quicksand; margin-bottom: 10px; color: white; background-color:#2d98d6;">Send</button>
+    </form>
+    </div>
+    </div>
+    <div class="w3-col m4 w3-card-4 w3-padding-8 w3-white" style="padding-left: 2%; min-height: 365px;">
+    <div class="w3-padding-12"><h2 style="font-family: Pacifico; font-size: 200%;">Contact Us</h2></div>
+      <h4>Address :</h4>
+      <!-- <p>Swing by for a cup of coffee, or whatever.</p> -->
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge" ></i> Z-30, LGF, Hauz Khas, New Delhi-110016</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i> +91-9810087022</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> arvindshakha.bvp@gmail.com</p>
+    </div>
+  </div>
+  <!-- <h2 align="center">GO Corona GO</h2> -->
+</div>
+</body>
