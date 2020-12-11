@@ -1,2 +1,2 @@
 # umeed.live
-A dynamic MERN website with live repository status for plasma donors and seekers to connect. 
+A dynamic MEAN stack website with live repository status for plasma donors and seekers to connect. 
